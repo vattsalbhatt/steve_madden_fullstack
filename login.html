@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Google Oswald Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Kit -->
+    <script
+      src="https://kit.fontawesome.com/db1cefd446.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Navbar CSS file -->
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <!-- <link rel="stylesheet" href="./styles/Stevenavbarstyle.css" /> -->
+    <!-- Index CSS file -->
+    <link rel="stylesheet" href="./styles/index.css" />
+
+    <!-- Footer CSS file -->
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/login.css" />
+    <script
+      src="https://kit.fontawesome.com/b82df6f992.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style></style>
+    <title>Log in</title>
+  </head>
+  <body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Copy Paste till here -->
+
+    <div id="navbar1"></div>
+    <div id="navbar2"></div>
+
+    <div id="name">
+      <h1>HI THERE!</h1>
+      <div id="log">
+        <!-- <h2 id="mob">Email</h2>
+        <input id="mobile" type="text" />
+        <h2>OR</h2>
+        <h2 id="google"><i class="fa fa-google" aria-hidden="true" style="color: blue;"></i> Sign with google</h2>
+        <button id="send">SEND TOP</button>
+        <h2 id="mob1">ONE TIME PASSWORD (OTP)*</h2>
+        <input id="mobile1" type="text" />
+        <h5 id="h5">OTP validation failed</h5>
+        <button id="send1">CONTINUE</button> -->
+
+        <h2 id="email">Email</h2>
+        <input id="email1" type="text" placeholder="enter your email here" />
+        <h2 id="password">Password</h2>
+        <input
+          id="password1"
+          type="password"
+          placeholder="enter your password here"
+        />
+        <button id="submit">Submit</button>
+        <!-- <h2>OR</h2>
+        <h2 id="google">
+          <i class="fa fa-google" aria-hidden="true" style="color: blue"></i>
+          Sign with google
+        </h2> -->
+      </div>
+      <div id="option">
+        <h2>Sign with google</h2>
+      </div>
+    </div>
+
+    <div id="foot"></div>
+  </body>
+</html>
+
+<script type="module">
+  let sumbit = document.getElementById("submit");
+  submit.addEventListener("click", submit1);
+
+  async function submit1() {
+    console.log("hello!!!");
+
+    let data = {
+      email: document.getElementById("email1").value,
+      password: document.getElementById("password1").value,
+    };
+
+    data = JSON.stringify(data);
+    console.log(data);
+
+    let result = await fetch("https://steve-madden.herokuapp.com/login", {
+      method: "POST",
+      body: data,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    let response = await result.json();
+
+    console.log(response);
+     if(response.status==0){
+     alert("Please Registered First");
+     window.location.href="registration.html";
+     }
+    if(response.status==1){
+      alert("Please enter valid email or password");
+     }
+     if(response.status==2){
+      alert("You are sucessfulley log in");
+      window.location.href="index.html";
+    localStorage.setItem("user",JSON.stringify(response.user))
+      console.log(response.user);
+     }
+  };  
+
+  import { navbar2, navbar1 } from "./components/navbar.js";
+  let nav1 = document.querySelector("#navbar1");
+  nav1.innerHTML = navbar1();
+  let nav2 = document.querySelector("#navbar2");
+  nav2.innerHTML = navbar2();
+
+
+  let user=JSON.parse(localStorage.getItem("user"));
+  name=user.name;
+    // console.log(name);
+    if(name){
+
+      let div = document.createElement("div");
+
+      div.textContent = "Log-out"
+    
+      document.getElementById("steve-signin").textContent = `welcome ${name}`
+      
+      div.addEventListener("click" , clean);
+      document.getElementById("steve-signin").append(div);
+
+
+      function clean(){
+        let d = undefined;
+        localStorage.setItem("user" , d);
+        window.location.href = "./login.html"
+      }
+
+    }
+
+  //Search Function
+
+  import searchTerm from "./scripts/search.js";
+  let query2 = document.querySelector("#searchQuery2");
+  query2.addEventListener("keypress", getSearch2);
+
+  function getSearch2(event) {
+    console.log("running");
+    if (event.key == "Enter") {
+      let keyword = query2.value;
+      console.log(keyword);
+      searchTerm(keyword);
+    }
+  }
+
+  let query1 = document.querySelector("#steven-search-box");
+  query1.addEventListener("keypress", getSearch1);
+
+  function getSearch1(event) {
+    console.log("running");
+    if (event.key == "Enter") {
+      let keyword = query1.value;
+      console.log(keyword);
+      searchTerm(keyword);
+    }
+  }
+
+  // import { footer, tr } from "./components/footer.js";
+
+  let foot = document.getElementById("foot");
+
+  foot.innerHTML = footer();
+
+  tr();
+
+  //Email Subscription
+
+  let email = document.querySelector("#go");
+  email.addEventListener("click", function () {
+    let emailId = document.querySelector("#inputfoot").value;
+    subscribeMail(emailId);
+  });
+
+  function subscribeMail(emailId) {
+    alert("Subscribed --> " + emailId);
+  }
+
+  // import sign from "./scripts/login.js";
+
+  sign();
+</script>

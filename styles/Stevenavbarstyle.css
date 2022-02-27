@@ -1,0 +1,146 @@
+* {
+  font-family: "Oswald", sans-serif;
+}
+
+/* -------Sign-in-Styling--------- */
+
+#Steve-Navbar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
+}
+#steve-signin {
+  display: flex;
+  margin-right: 30px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+#steve-signin > p {
+  margin-right: 10px;
+}
+#steve-signin > p > a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font: weight 520px;
+}
+#steve-signin > p > a:hover {
+  color: rgba(128, 128, 128, 0.733);
+}
+#steven-name {
+  font-size: 24px;
+  font-weight: 800px;
+  margin-right: 20px;
+  margin-left: 170px;
+}
+#steven-name > h1 > a {
+  text-decoration: none;
+  color: black;
+}
+#steven-search {
+  display: flex;
+  gap: 10px;
+  margin-right: 30px;
+}
+#steven-search-box {
+  border: none;
+  height: 30px;
+  border-bottom: 2px solid black;
+  /* margin-top: 15px; */
+  font-size: 18px;
+}
+#steven-search-box::placeholder {
+  font-size: 18px;
+}
+#totalCartItem {
+  border: 2px solid black;
+  height: 27px;
+  width: 38px;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  margin-top: 19px;
+  border-radius: 9px;
+  background-color: black;
+  padding-top: 5px;
+}
+
+/* -----------Sign-in-Styling-Ending---------- */
+
+/* --------------DropDown Styling-------------- */
+#steve-navbar-menu {
+  text-align: center;
+}
+#steve-navbar-menu > ul {
+  display: inline-flex;
+}
+#steve-navbar-menu > ul > li,
+#steve-navbar-menu-whats > ul > li {
+  width: 110px;
+  list-style: none;
+  font-size: 17px;
+  font-weight: 900;
+}
+#steve-navbar-menu > ul > li#giftmadden {
+  width: 170px;
+}
+#steve-navbar-menu > ul > li > a {
+  text-decoration: none;
+  color: black;
+}
+#steve-navbar-menu > ul > li > a:hover {
+  color: rgba(128, 128, 128, 0.658);
+  cursor: pointer;
+}
+#steve-navbar-menu-whats {
+  display: none;
+  list-style: none;
+  background-color: black;
+  width: 1600px;
+  left: 0px;
+  color: white;
+}
+#steve-navbar-menu-whats > ul {
+  margin: 0px 530px;
+}
+#steve-navbar-menu-whats > ul > li > a:hover {
+  background-color: orange;
+  cursor: pointer;
+}
+#steve-navbar-menu-whats-img {
+  margin-top: -110px;
+  margin-left: 0px;
+}
+#steve-navbar-menu-men-img {
+  margin-top: -130px;
+  margin-left: 10px;
+}
+#steve-navbar-menu-women-img {
+  margin-top: -130px;
+  margin-left: 10px;
+}
+#steve-navbar-menu-handbags-img {
+  margin-top: -88px;
+  margin-left: 10px;
+}
+#steve-navbar-menu-clothing-img {
+  margin-top: -88px;
+  margin-left: 10px;
+}
+#steve-navbar-menu > ul > li:hover #steve-navbar-menu-whats {
+  display: block;
+  position: absolute;
+  margin-top: 0px;
+}
+#steve-navbar-menu-whats > ul > li > a {
+  text-decoration: none;
+  color: black;
+}
+#steve-navbar-menu-whats > ul > li > a:hover {
+  color: grey;
+}
+
+/* --------------DropDown Styling Ending----------- */
+
+/* <script src="https://kit.fontawesome.com/db1cefd446.js" crossorigin="anonymous" ></script> */

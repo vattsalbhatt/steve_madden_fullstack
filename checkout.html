@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>checkout</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/checkout.css" />
+    <script
+      src="https://kit.fontawesome.com/b82df6f992.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="head">
+        <p id="steve">STEVE MADDEN</p>
+        <div id="wh">CART > <span id="ress"> ADDRESS </span> > PAYMENT</div>
+      </div>
+
+      <div id="disc">
+        <div id="prier"></div>
+
+        <!-- <div>
+              <div>
+                  <hr>
+                  <div class='code'> 
+                    <input id='app' class="" type="text" placeholder="  Discount code">
+                    <button id='apply'>Apply</button>
+                  </div>
+                 <hr>
+                 <div class='code'>
+                     <p>Subtotal</p>
+                     <p id='Sprice'></p>
+                 </div>
+                 <hr>
+                 <div class='code'>
+                     <p>Total</p>
+                     <p id='Tprice'></p>
+                 </div>
+        
+                  
+              </div>
+
+          </div>
+ -->
+      </div>
+
+      <div id="add">
+        <h2>Shipping address</h2>
+        <input id="f" class="inpoo" type="text" placeholder="   First name" />
+        <input id="l" class="inpoo" type="text" placeholder="   Last name" />
+        <input id="a" class="inpoo" type="text" placeholder="   Address" />
+        <p class="note">Please note we do not shift to po boxes</p>
+        <input
+          id="appar"
+          class="inpoo"
+          type="text"
+          placeholder="   Appartment,suite,etc.(optional)"
+        />
+        <div id="zcs">
+          <div id="zcs1">
+            <p>ZIP code</p>
+            <input id="zipcode" class="zip inpoo" type="text" />
+          </div>
+          <div id="zcs1">
+            <p>Country / Region</p>
+            <input id="country" class="zip inpoo" type="text" />
+          </div>
+          <div id="zcs3">
+            <p>State</p>
+            <input id="state" class="zip inpoo" type="text" />
+          </div>
+        </div>
+
+        <input id="city" class="inpoo" type="text" placeholder="   City" />
+        <input id="phone" class="inpoo" type="text" placeholder="   phone" />
+        <input
+          id="mail"
+          class="inpoo"
+          type="text"
+          placeholder="   christine@gmail.com"
+        />
+        <p id="type">Address Type</p>
+
+        <div id="box">
+          <label class="cer"
+            >Home
+            <input type="radio" checked="checked" name="radio" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="cer"
+            >Office
+            <input type="radio" name="radio" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+        <div id="end">
+          <span> <i class="fas fa-chevron-left"></i> Back</span>
+          <button onclick="store()" id="cont">Continue Shopping</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="scripts/checkout.js"></script>

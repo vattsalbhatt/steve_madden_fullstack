@@ -1,0 +1,137 @@
+*{
+    font-family: 'Oswald', sans-serif;;
+}
+
+#steve-signin >div{
+    margin-left: 10px;
+    width: 100px;
+    background-color: black;
+    /* border : 1px solid red; */
+    padding: auto;
+    color: white;
+    text-align: center;
+    height: 28px;
+    padding-top: 2px;
+  }
+
+#Check-Out-name{
+    justify-content: center;
+    margin: 20px 520px;
+    /* text-align: center; */
+}
+#Check-Out-Data{
+    width: 65%;
+}
+/* #imgdiv{
+    background-color: #f7f7f7;
+    height: 100px;
+    width: 140px;
+    padding: 30px;
+    margin: 0px 20px;
+} */
+#cart-image{
+    height: 140px;
+    width: 190px;
+    margin: 20px 20px;
+}
+#cart-image:hover{
+    transform: scale(1.5) ;
+}
+#dataDiv{
+    line-height: 4px;
+    margin-top: 40px;
+}
+#dataDiv:hover{
+    color: rgb(0, 217, 255);
+}
+#alldatadiv{
+    display: flex;
+    margin: 20px 10px;
+    border-bottom: 1px solid grey;
+}
+#sub{
+    background-color: black;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    height: 30px;
+    width: 40px;
+    padding-top: 6px;
+}
+#add{
+    background-color: black;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    height: 30px;
+    width: 40px;
+    padding-top: 10px;
+}
+#quantity{
+    background-color: #fafafa;
+    color: black;
+    text-align: center;
+    height: 30px;
+    width: 70px;
+    padding-top: 14px;
+}
+#addDiv{
+    display: flex;
+    margin: 40px 30px;
+    height: 20px;
+}
+#discount{
+    height: 42px;
+    width: 180px;
+}
+#discountButton{
+    height: 50px;
+    width: 110px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+}
+#ApplyDiscount{
+    display: flex;
+}
+#CheckOutButton{
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size: 21px;
+}
+#productName{
+    margin-bottom: 0px;
+}
+#deleteItem{
+    margin: 60px 40px;
+}
+#check-out-price{
+    margin: 60px 0px;
+}
+#check-out-mrpprice{
+    margin: 60px 5px;
+    color: rgba(206, 198, 198, 0.877);
+}
+#Check-Out{
+    display: flex;
+}
+#Check-Out-Billing{
+    height: 240px;
+    width: 350px;
+    background-color: #fafafa;
+    margin: 10px 30px;
+    padding: 20px;
+}
+#emptyimg{
+    height: 230px;
+    width: 260px;
+    margin: 30px 440px;
+}
+#emptyPhew{
+     margin-left: 490px;
+     font-size: 18px;
+     margin-top: -6px;
+     color: rgb(128, 128, 128);
+}

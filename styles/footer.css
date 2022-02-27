@@ -1,0 +1,261 @@
+#footer {
+  margin: 0px;
+  font-family: "Oswald", sans-serif;
+}
+
+.hfoot {
+  height: 4px;
+  color: black;
+  background-color: black;
+}
+
+.h1foot {
+  height: 4px;
+  color: black;
+  background-color: black;
+}
+
+#footer {
+  text-align: end;
+  line-height: 25px;
+}
+
+#opfoot {
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#opfoot > div {
+  margin: 5px;
+}
+
+#opfoot > div:nth-child(1) {
+  grid-area: 1/1/2/2;
+}
+
+#opfoot > div:nth-child(2) {
+  grid-area: 1/2/2/3;
+}
+
+#opfoot > div:nth-child(3) {
+  grid-area: 1/3/2/4;
+}
+
+#opfoot > div:nth-child(4) {
+  grid-area: 1/4/2/5;
+  display: flex;
+  padding: 10px 10px 10px 10px;
+}
+
+#opfoot > div:nth-child(5) {
+  text-align: left;
+  grid-area: 1/5/2/-1;
+}
+
+#opfoot > div:nth-child(6) {
+  text-align: left;
+  grid-area: 2/1/3/3;
+}
+
+.ulfoot {
+  list-style-type: none;
+  text-align: left;
+  padding: 0px;
+}
+
+.fufoot {
+  text-align: left;
+}
+
+.fi1foot {
+  font-size: 14px;
+  margin-top: 30px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  list-style-type: none;
+  text-align: left;
+  padding: 0px;
+}
+
+.fi2foot {
+  font-size: 14px;
+  margin-top: 30px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  list-style-type: none;
+  text-align: left;
+  padding: 0px;
+}
+
+.fi3foot {
+  font-size: 14px;
+  margin-top: 30px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  list-style-type: none;
+  text-align: left;
+  padding: 0px;
+}
+
+.th1 {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-left: 23px;
+}
+.th {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+#go {
+  height: 50px;
+  width: 15%;
+  background-color: black;
+  color: white;
+  margin-bottom: 15px;
+}
+
+#inputfoot {
+  border: 1px solid black;
+  height: 48px;
+  width: 80%;
+}
+
+#la > div {
+  width: 50%;
+}
+
+#la {
+  display: flex;
+  font-weight: lighter;
+  font-size: 18px;
+}
+
+#loc {
+  font-size: 40px;
+}
+
+#fac {
+  font-size: 32px;
+}
+
+#inst {
+  font-size: 32px;
+}
+
+#you {
+  font-size: 32px;
+}
+
+#brac {
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+#arrow1 {
+  display: none;
+  width: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: end;
+}
+#arrow2 {
+  display: none;
+  width: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: end;
+}
+#arrow3 {
+  display: none;
+  width: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: end;
+}
+.span1 {
+  display: flex;
+  text-align: start;
+  padding-right: 10px;
+  font-size: 18px;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  #opfoot {
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1px;
+  }
+
+  #opfoot > div {
+    padding: 0px;
+
+    margin-top: 0px;
+
+    background-color: #e9e9e9;
+  }
+
+  #opfoot > div:nth-child(1) {
+    padding-left: 0px;
+    grid-area: 1/1/2/-1;
+  }
+
+  #opfoot > div:nth-child(2) {
+    grid-area: 2/1/3/-1;
+  }
+
+  #opfoot > div:nth-child(3) {
+    grid-area: 3/1/4/-1;
+  }
+
+  #opfoot > div:nth-child(4) {
+    display: none;
+  }
+
+  #opfoot > div:nth-child(5) {
+    padding: 10px;
+    text-align: center;
+    grid-area: 5/1/6/-1;
+  }
+
+  #opfoot > div:nth-child(6) {
+    text-align: center;
+    grid-area: 6/1/7/-1;
+  }
+
+  .fi1foot {
+    display: none;
+  }
+
+  .fi2foot {
+    display: none;
+  }
+
+  .fi3foot {
+    display: none;
+  }
+
+  #inputfoot {
+    width: 70%;
+  }
+
+  .h1foot {
+    display: none;
+  }
+
+  #arrow1 {
+    display: inline;
+  }
+  #arrow2 {
+    display: inline;
+  }
+  #arrow3 {
+    display: inline;
+  }
+}

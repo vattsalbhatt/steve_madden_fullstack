@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check-Out</title>
+    <link rel="stylesheet" href="./styles/Stevenavbarstyle.css" />
+    <link rel="stylesheet" href="./styles/cartINstyle.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <script
+      src="https://kit.fontawesome.com/db1cefd446.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div>
+      <div id="Steve-Navbar">
+        <div id="steve-signin">
+          <p><a href="./login.html">Sign In</a></p>
+          <p>or</p>
+          <p><a href="./login.html">Join Now</a></p>
+        </div>
+        <div id="steven-name">
+          <h1><a href="./index.html">STEVE MADDEN</a></h1>
+        </div>
+        <div id="steven-search">
+          <p><i class="fas fa-search fa-2x" style="color: #6c6c6c"></i></p>
+          <input type="text" id="steven-search-box" placeholder="Search" />
+          <p><i class="fas fa-shopping-bag fa-2x"> </i></p>
+          <p id="totalCartItem"></p>
+        </div>
+      </div>
+      <div id="steve-menu-parent">
+        <div id="steve-navbar-menu">
+          <ul>
+            <li>
+              <a href="">What's New</a>
+              <div id="steve-navbar-menu-whats">
+                <ul>
+                  <li style="color: black">Dummy</li>
+                  <li><a style="color: white" href="./women.html">Women</a></li>
+                  <li><a style="color: white" href="./mens.html">Mens</a></li>
+                  <li>
+                    <a style="color: white" href="./handbags.html">HandBags</a>
+                  </li>
+                  <li>
+                    <a style="color: white" href="./products.html">ShowAll</a>
+                  </li>
+                </ul>
+                <img
+                  id="steve-navbar-menu-whats-img"
+                  src="https://stevemadden.gumlet.io/category/1623215523whats-New.jpg?dpr=1.0&q=70&w=240"
+                />
+              </div>
+            </li>
+            <li>
+              <a href="#">Men</a>
+              <div id="steve-navbar-menu-whats">
+                <ul>
+                  <li style="color: black">Dummy</li>
+                  <li>
+                    <a style="color: white" href="./products.html"
+                      >What's New</a
+                    >
+                  </li>
+                  <li><a style="color: white" href="./mens.html">Shirts</a></li>
+                  <li>
+                    <a style="color: white" href="./mens.html">Sneakes</a>
+                  </li>
+                  <li><a style="color: white" href="#./mens.html">Boots</a></li>
+                  <li>
+                    <a style="color: white" href="./mens.html">Sandals</a>
+                  </li>
+                </ul>
+                <img
+                  id="steve-navbar-menu-men-img"
+                  src="https://stevemadden.gumlet.io/category/1623215616men.jpg?dpr=1.0&q=70&w=240"
+                />
+              </div>
+            </li>
+            <li>
+              <a href="#">Women</a>
+              <div id="steve-navbar-menu-whats">
+                <ul>
+                  <li style="color: black">Dummy</li>
+                  <li>
+                    <a style="color: white" href="./products.html"
+                      >What's New</a
+                    >
+                  </li>
+                  <li><a style="color: white" href="./women.html">Heels</a></li>
+                  <li>
+                    <a style="color: white" href="./women.html">Sandels</a>
+                  </li>
+                  <li><a style="color: white" href="./women.html">Heels</a></li>
+                  <li>
+                    <a style="color: white" href="./women.html">Loafers</a>
+                  </li>
+                </ul>
+                <img
+                  id="steve-navbar-menu-women-img"
+                  src=" https://stevemadden.gumlet.io/category/1623215559women.jpg?dpr=1.0&q=70&w=240"
+                />
+              </div>
+            </li>
+            <li>
+              <a href="#">HandBags</a>
+              <div id="steve-navbar-menu-whats">
+                <ul>
+                  <li style="color: black">Dummy</li>
+                  <li>
+                    <a style="color: white" href="./products.html"
+                      >What's New</a
+                    >
+                  </li>
+                  <li>
+                    <a style="color: white" href="./handbags.html">Handbags</a>
+                  </li>
+                  <li>
+                    <a style="color: white" href="./handbags.html">CrossBody</a>
+                  </li>
+                </ul>
+                <img
+                  id="steve-navbar-menu-handbags-img"
+                  src=" https://stevemadden.gumlet.io/category/1623215660handbag.jpg?w=240&dpr=1.0"
+                />
+              </div>
+            </li>
+            <li>
+              <a href="#">Clothing</a>
+              <div id="steve-navbar-menu-whats">
+                <ul>
+                  <li style="color: black">Dummy</li>
+                  <li>
+                    <a style="color: white" href="./clothing.html">TopWear</a>
+                  </li>
+                  <li>
+                    <a style="color: white" href="./clothing.html">Bottom</a>
+                  </li>
+                  <li>
+                    <a style="color: white" href="./clothing.html"
+                      >All Clothing</a
+                    >
+                  </li>
+                </ul>
+                <img
+                  id="steve-navbar-menu-clothing-img"
+                  src="https://stevemadden.gumlet.io/category/1623215687sale-banner.jpg?dpr=1.0&q=70&w=240"
+                />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h1 id="Check-Out-name">Your Cart</h1>
+    </div>
+    <div id="Check-Out">
+      <div id="Check-Out-Data"></div>
+      <div id="Check-Out-Billing">
+        <div id="ApplyDiscount">
+          <input type="=text" placeholder="Enter Code Here" id="discount" />
+          <button id="discountButton">Apply</button>
+        </div>
+        <h3>
+          Subtotal: &nbsp<span> <i class="fas fa-rupee-sign"></i> </span
+          ><span id="total"></span>
+        </h3>
+        <h3>
+          Total Order: &nbsp<span> <i class="fas fa-rupee-sign"></i> </span
+          ><span id="discountPrice"></span>
+        </h3>
+        <button id="CheckOutButton">Check-Out</button>
+      </div>
+    </div>
+    <div id="cartOutFooter"></div>
+  </body>
+</html>
+
+<script src="./scripts/cartIN.js">
+     var checkOutNavbar=document.querySelector("#checkout-navbar");
+  //    import navbar from "./component/navbar.js"
+
+     checkOutNavbar.innerHTML=navbar();
+     var arr2=JSON.parse(localStorage.getItem("Items"));
+     var cartTotal=document.querySelector("#totalCartItem");
+     console.log(cartTotal);
+     cartTotal.innerHTML= arr2.length;
+
+
+     var cartOutFooter=document.querySelector("#cartOutFooter");
+</script>
+
+<script type="module">
+  import { footer, tr } from "./components/footer.js";
+  console.log(footer);
+  let checkOutFooter = document.querySelector("#cartOutFooter");
+  checkOutFooter.innerHTML = footer();
+  tr();
+
+  let user=JSON.parse(localStorage.getItem("user")) || null;
+     name=user.name;
+    // console.log(name);
+    if(name){
+
+      let div = document.createElement("div");
+
+      div.textContent = "Log-out"
+    
+      document.getElementById("steve-signin").textContent = `welcome ${name}`
+      
+      div.addEventListener("click" , clean);
+      document.getElementById("steve-signin").append(div);
+
+
+      function clean(){
+        let d = undefined;
+        localStorage.setItem("user" , d);
+        window.location.href = "./cartIN.html"
+      }
+
+    }
+
+  import searchTerm from "./scripts/search.js";
+  let query1 = document.querySelector("#steven-search-box");
+  query1.addEventListener("keypress", getSearch1);
+
+  function getSearch1(event) {
+    console.log("running");
+    if (event.key == "Enter") {
+      let keyword = query1.value;
+      console.log(keyword);
+      searchTerm(keyword);
+    }
+  }
+  //  Check it
+  //Email Subscription
+
+  let email = document.querySelector("#go");
+  email.addEventListener("click", function () {
+    let emailId = document.querySelector("#inputfoot").value;
+    subscribeMail(emailId);
+  });
+
+  function subscribeMail(emailId) {
+    alert("Subscribed --> " + emailId);
+  }
+</script>

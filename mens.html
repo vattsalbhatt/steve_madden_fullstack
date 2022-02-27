@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mens</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/products.css"/>
+
+     <!-- Bootstrap CSS -->
+     <link
+     rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+     crossorigin="anonymous"
+   />
+   <!-- Google Oswald Font -->
+   <link
+     href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+     rel="stylesheet"
+   />
+
+   <!-- Font Awesome Kit -->
+   <script
+     src="https://kit.fontawesome.com/db1cefd446.js"
+     crossorigin="anonymous"
+   ></script>
+
+   <!-- Navbar CSS file -->
+   <link rel="stylesheet" href="./styles/navbar.css" />
+   <!-- <link rel="stylesheet" href="./styles/Stevenavbarstyle.css" /> -->
+   <!-- Index CSS file -->
+   <!-- <link rel="stylesheet" href="./styles/index.css" /> -->
+
+   <!-- Footer CSS file -->
+   <link rel="stylesheet" href="./styles/footer.css" />
+
+</head>
+<body>
+
+    <!-- Optional JavaScript -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script
+   src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+   crossorigin="anonymous"
+ ></script>
+ <script
+   src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+   crossorigin="anonymous"
+ ></script>
+ <script
+   src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+   crossorigin="anonymous"
+ ></script>
+
+ <!-- Copy Paste till here -->
+
+</head>
+<body>
+    <div id="navbar1"></div>
+    <div id="navbar2"></div>
+
+    <div id="heading">
+        <p>MEN</p>
+    </div>
+   
+    <div id="main">
+        <div id="filters">
+            <p>CATEGORY <span id="catplus">+</span></p>
+            <div id="catdiv"></div>
+            <button id="btn">CLEAR  ALL  FILTERS</button>
+        </div>
+        <div id="products">
+
+            <div id="selectdiv">
+                <label>Sort by :</label>
+                <select id="sort" onchange="sortproducts()">
+                    <option value="discount">Discount</option>
+                    <option value="lowtohigh">Price (Low to High)</option>
+                    <option value="hightolow">Price (High to Low)</option>
+                </select>
+            </div>
+
+            <div id="cont"></div>
+        </div>
+
+    </div>
+    <div id="indexFooter"></div>
+</body>
+</html>
+
+<script>
+    let arr = JSON.parse(localStorage.getItem("cartitems")) || [];
+    let data;
+    let products = [];
+  
+    async function findAllpro() {
+      try {
+        let res = await fetch("https://steve-madden.herokuapp.com/products/mens");
+        // let res = await fetch("http://localhost:7896/products");
+  
+        data = await res.json();
+        // getAll(data);
+  
+        console.log(data);
+  
+        appendata(data);
+        console.log(data);
+      } catch (e) {
+        console.log("e: " + e);
+      }
+    }
+    findAllpro();
+  
+    function appendata(data) {
+      data.forEach((ele) => {
+        let div = document.createElement("div");
+        div.setAttribute("id", "prod");
+  
+        pricediv = document.createElement("div");
+        pricediv.setAttribute("id", "prices");
+  
+        let img = document.createElement("img");
+        img.src = ele.url;
+        img.setAttribute("id", "images");
+  
+        let name = document.createElement("p");
+        name.textContent = ele.name;
+        name.setAttribute("id", "name");
+  
+        let mrp = document.createElement("p");
+        mrp.textContent = ele.Mrp;
+        mrp.setAttribute("id", "mrp");
+  
+        let price = document.createElement("p");
+        price.textContent = ele.price;
+  
+        let discount = document.createElement("p");
+        discount.textContent = ele.discount;
+        discount.setAttribute("id", "dscnt");
+  
+        div.onclick = () => {
+          gotocart(ele);
+        };
+  
+        pricediv.append(mrp, price, discount);
+        div.append(img, name, pricediv);
+  
+        document.getElementById("cont").append(div);
+      });
+    }
+  
+    function sortproducts() {
+      let selected = document.getElementById("sort").value;
+      if (selected == "lowtohigh") {
+        async function findAllpro() {
+          try {
+            let res = await fetch(
+              "https://steve-madden.herokuapp.com/products/mens/low_high"
+            );
+            // let res = await fetch("http://localhost:7896/products/low_high");
+            data = await res.json();
+            // getAll(data);
+  
+            console.log(data);
+  
+            appendata(data);
+          } catch (e) {
+            console.log("e sorting low to high: " + e);
+          }
+        }
+        findAllpro();
+  
+        document.getElementById("cont").innerHTML = null;
+      } else if (selected == "hightolow") {
+        async function findAllpro() {
+          try {
+            let res = await fetch(
+              "https://steve-madden.herokuapp.com/products/mens/high_low"
+            );
+            // let res = await fetch("http://localhost:7896/products/high_low");
+  
+            data = await res.json();
+            // getAll(data);
+  
+            console.log(data);
+  
+            appendata(data);
+          } catch (e) {
+            console.log("e sorting high to low: " + e);
+          }
+        }
+        findAllpro();
+  
+        document.getElementById("cont").innerHTML = null;
+        // appendata(sortprice);
+      } else if (selected == "discount") {
+        document.getElementById("cont").innerHTML = null;
+        appendata(data);
+      }
+    }
+  
+    // Localstorage;
+    function gotocart(x) {
+      arr.push(x);
+      console.log("arr:", arr);
+      localStorage.setItem("cartitems", JSON.stringify(arr));
+      window.location.href = "pro_details.html";
+    }
+  
+    //FILTERS
+  
+    let count = 0;
+    document.getElementById("catplus").onclick = function () {
+      count++;
+      if (count % 2 == 0) {
+        document.getElementById("catdiv").innerHTML = null;
+      } else {
+        let bags = document.createElement("p");
+        bags.textContent = "Handbags";
+        bags.setAttribute("class", "pointer");
+        bags.onclick = function () {
+          window.location.href = "handbags.html";
+        };
+  
+        let cloths = document.createElement("p");
+        cloths.textContent = "Clothing";
+        cloths.setAttribute("class", "pointer");
+        cloths.onclick = function () {
+          window.location.href = "clothing.html";
+        };
+  
+        let women = document.createElement("p");
+        women.textContent = "Women";
+        women.setAttribute("class", "pointer");
+        women.onclick = function () {
+          window.location.href = "women.html";
+        };
+  
+        let men = document.createElement("p");
+        men.textContent = "Men";
+        men.setAttribute("class", "pointer");
+        men.onclick = function () {
+          window.location.href = "mens.html";
+        };
+  
+        let all = document.createElement("p");
+        all.textContent = "All Products";
+        all.setAttribute("class", "pointer");
+        all.onclick = function () {
+          window.location.href = "products.html";
+        };
+  
+        document.getElementById("catdiv").append(bags, cloths, women, men, all);
+      }
+    };
+  
+    document.getElementById("btn").onclick = function () {
+      document.getElementById("filters").innerHTML = null;
+      document.getElementById("filters").style.width = "0px";
+      document.getElementById("products").style.width = "80%";
+      margin = "auto";
+    };
+  </script>
+
+<script type="module">
+    import { navbar2, navbar1 } from "./components/navbar.js";
+ let nav1 = document.querySelector("#navbar1");
+ nav1.innerHTML = navbar1();
+ let nav2 = document.querySelector("#navbar2");
+ nav2.innerHTML = navbar2();
+
+ import { footer, tr } from "./components/footer.js";
+ let foot = document.querySelector("#indexFooter");
+ foot.innerHTML = footer();
+ tr();
+
+ let user=JSON.parse(localStorage.getItem("user")) || null;
+  name=user.name;
+    // console.log(name);
+    if(name){
+
+      let div = document.createElement("div");
+
+      div.textContent = "Log-out"
+    
+      document.getElementById("steve-signin").textContent = `welcome ${name}`
+      
+      div.addEventListener("click" , clean);
+      document.getElementById("steve-signin").append(div);
+
+
+      function clean(){
+        let d = undefined;
+        localStorage.setItem("user" , d);
+        window.location.href = "./mens.html"
+      }
+
+    }
+
+ //Search Function
+
+ import searchTerm from "./scripts/search.js";
+ let query2 = document.querySelector("#searchQuery2");
+ query2.addEventListener("keypress", getSearch2);
+
+ function getSearch2(event) {
+   console.log("running");
+   if (event.key == "Enter") {
+     let keyword = query2.value;
+     console.log(keyword);
+     searchTerm(keyword);
+   }
+ }
+
+ let query1 = document.querySelector("#steven-search-box");
+ query1.addEventListener("keypress", getSearch1);
+
+ function getSearch1(event) {
+   console.log("running");
+   if (event.key == "Enter") {
+     let keyword = query1.value;
+     console.log(keyword);
+     searchTerm(keyword);
+   }
+ }
+
+ //Email Subscription
+
+ let email = document.querySelector("#go");
+ email.addEventListener("click", function () {
+   let emailId = document.querySelector("#inputfoot").value;
+   subscribeMail(emailId);
+ });
+
+ function subscribeMail(emailId) {
+   alert("Subscribed --> " + emailId);
+ }
+ //   console.log(nav);
+</script>
